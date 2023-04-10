@@ -1,0 +1,9 @@
+QuestaSim vlog 10.7a Compiler 2018.03 Mar 26 2018
+Start time: 13:49:26 on Apr 10,2023
+vlog -sv -work source_work source/registers.sv 
+-- Compiling module cpu_register
+
+Top level modules:
+	cpu_register
+End time: 13:49:26 on Apr 10,2023, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0

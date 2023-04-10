@@ -7,9 +7,11 @@ module io_bus (
 
     output reg [0:63] read_data,
 
-    input reg [0:255][0:63] ex_data,
+    input reg [0:255][0:63] ex_data
 );
 
+wire [0:63] mem_result;
+wire [0:63] ex_result;
 
 assign write_mem = write_enable & addr[8];
 assign read_data = addr[8] ? mem_result : ex_result;

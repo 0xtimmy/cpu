@@ -15,12 +15,12 @@
 #
 # **** list all files on the same line. DO NOT USE the "\" escape character to extend across 
 #      multiple lines. The grading script expects all file names on one line. 
-COMPONENT_FILES	:=  
+COMPONENT_FILES	:=  alu.sv controller.sv decoder.sv header.sv io_bus.sv memory.sv program_counter.sv registers.sv
 
 # Specify the name of the top level file (do not include the source folder in the name)
 # NOTE: YOU WILL NEED TO SET THIS VARIABLE'S VALUE WHEN WORKING WITH HEIRARCHICAL DESIGNS
 # AND THE AUTOMATED GRADING SYSTEM
-TOP_LEVEL_FILE	:= top.sv
+TOP_LEVEL_FILE	:= cpu.sv
 
 # Specify the filepath of the test bench you want to use (ie. tb_top_level.sv)
 # (do not include the source folder in the name)

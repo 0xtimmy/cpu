@@ -1,0 +1,12 @@
+QuestaSim vlog 10.7a Compiler 2018.03 Mar 26 2018
+Start time: 13:49:51 on Apr 10,2023
+vlog -sv -work source_work source/tb_cpu.sv 
+-- Compiling package header
+-- Compiling package tb_cpu_sv_unit
+-- Importing package header
+-- Compiling module tb_cpu
+
+Top level modules:
+	tb_cpu
+End time: 13:49:52 on Apr 10,2023, Elapsed time: 0:00:01
+Errors: 0, Warnings: 0

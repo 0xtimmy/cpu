@@ -1,0 +1,14 @@
+QuestaSim vlog 10.7a Compiler 2018.03 Mar 26 2018
+Start time: 12:48:12 on Apr 10,2023
+vlog -sv -work source_work source/top.sv 
+-- Compiling package header
+** Warning: source/top.sv(7): (vlog-13314) Defaulting port 'ex_data' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+-- Compiling package top_sv_unit
+-- Importing package header
+-- Compiling module single_cycle
+** Warning: source/top.sv(7): (vlog-13314) Defaulting port 'ex_data' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+
+Top level modules:
+	single_cycle
+End time: 12:48:12 on Apr 10,2023, Elapsed time: 0:00:00
+Errors: 0, Warnings: 2

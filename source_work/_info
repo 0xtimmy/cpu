@@ -1,0 +1,518 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/ecegrid/a/mg148/cpu
+valu
+Z1 DXx6 sv_std 3 std 0 22 >9az<^>2ff9DAl3OFGaAf1
+Z2 DXx4 work 6 header 0 22 =bN]<A2CefJ560SKEGnY51
+DXx4 work 11 alu_sv_unit 0 22 bJ7?fZkNdV1iYDM`70?@Q2
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+r1
+!s85 0
+31
+!i10b 1
+!s100 P?VfTN3h2C8[RR]QXa`MA2
+IBB9;5=iUnYzO^cCnkP0bW0
+!s105 alu_sv_unit
+S1
+R0
+Z4 w1681148673
+Z5 8source/alu.sv
+Z6 Fsource/alu.sv
+L0 3
+Z7 OE;L;10.7a;67
+31
+Z8 !s108 1681148675.000000
+Z9 !s107 source/alu.sv|
+Z10 !s90 -sv|-work|source_work|source/alu.sv|
+!i113 0
+Z11 o-sv -work source_work
+Z12 tCoverage 63 CoverExcludeDefault 1 CoverOpt 1 CoverShortCircuit 0 CvgOpt 0
+Xalu_sv_unit
+R1
+R2
+VbJ7?fZkNdV1iYDM`70?@Q2
+r1
+!s85 0
+31
+!i10b 1
+!s100 9Yf[Ql=B0W_k4`21fHjS20
+IbJ7?fZkNdV1iYDM`70?@Q2
+!i103 1
+S1
+R0
+R4
+R5
+R6
+L0 1
+R7
+31
+R8
+R9
+R10
+!i113 0
+R11
+R12
+vcontroller
+R1
+R2
+DXx4 work 18 controller_sv_unit 0 22 RlLN;GYnfGbO1GEf@MM@[0
+R3
+r1
+!s85 0
+31
+!i10b 1
+!s100 4SN62zAj[RcXc<zLNWM5o0
+I4^BH2OUePJDM6_=7]dQmQ0
+!s105 controller_sv_unit
+S1
+R0
+Z13 w1681148700
+Z14 8source/controller.sv
+Z15 Fsource/controller.sv
+L0 3
+R7
+31
+Z16 !s108 1681148702.000000
+Z17 !s107 source/controller.sv|
+Z18 !s90 -sv|-work|source_work|source/controller.sv|
+!i113 0
+R11
+R12
+Xcontroller_sv_unit
+R1
+R2
+VRlLN;GYnfGbO1GEf@MM@[0
+r1
+!s85 0
+31
+!i10b 1
+!s100 Ag8GX[^mVk@4zM@=R1z:H3
+IRlLN;GYnfGbO1GEf@MM@[0
+!i103 1
+S1
+R0
+R13
+R14
+R15
+L0 1
+R7
+31
+R16
+R17
+R18
+!i113 0
+R11
+R12
+vcpu
+R1
+R2
+Z19 DXx4 work 11 cpu_sv_unit 0 22 U`]Y3l6oO=j>FW9OSDEif2
+R3
+r1
+!s85 0
+31
+!i10b 1
+!s100 DP=cUzLmjBCd62eAYWQ1m3
+IDT8A=5?V57Y]O?z6hehg;2
+Z20 !s105 cpu_sv_unit
+S1
+R0
+Z21 w1681149019
+Z22 8source/cpu.sv
+Z23 Fsource/cpu.sv
+L0 4
+R7
+31
+Z24 !s108 1681149023.000000
+Z25 !s107 source/header.sv|source/cpu.sv|
+Z26 !s90 -sv|-work|source_work|source/cpu.sv|
+!i113 0
+R11
+R12
+vcpu_register
+R1
+!s110 1681148966
+!i10b 1
+!s100 D7l6LQQojlJ4Y;>:^OAL92
+Il:7=_klKSAY6f7JP__dbf1
+R3
+!s105 registers_sv_unit
+S1
+R0
+w1681148963
+8source/registers.sv
+Fsource/registers.sv
+L0 1
+R7
+r1
+!s85 0
+31
+!s108 1681148966.000000
+!s107 source/registers.sv|
+!s90 -sv|-work|source_work|source/registers.sv|
+!i113 0
+R11
+R12
+Xcpu_sv_unit
+R1
+R2
+VU`]Y3l6oO=j>FW9OSDEif2
+r1
+!s85 0
+31
+!i10b 1
+!s100 M[Zn>M8IgYVomSB=[EZ<G3
+IU`]Y3l6oO=j>FW9OSDEif2
+!i103 1
+S1
+R0
+R21
+R22
+R23
+Z27 Fsource/header.sv
+L0 2
+R7
+31
+R24
+R25
+R26
+!i113 0
+R11
+R12
+vdecoder
+R1
+R2
+DXx4 work 15 decoder_sv_unit 0 22 dhP57X[f4oPIb3@lc69ld2
+R3
+r1
+!s85 0
+31
+!i10b 1
+!s100 LEW5?I7:1TQn;5n>Og^3J1
+IDE<KX1[b<]5MO9akgVn=P3
+!s105 decoder_sv_unit
+S1
+R0
+Z28 w1681148858
+Z29 8source/decoder.sv
+Z30 Fsource/decoder.sv
+L0 3
+R7
+31
+Z31 !s108 1681148862.000000
+Z32 !s107 source/decoder.sv|
+Z33 !s90 -sv|-work|source_work|source/decoder.sv|
+!i113 0
+R11
+R12
+Xdecoder_sv_unit
+R1
+R2
+VdhP57X[f4oPIb3@lc69ld2
+r1
+!s85 0
+31
+!i10b 1
+!s100 3UWnhg?52nGa^Ye>4kcmA3
+IdhP57X[f4oPIb3@lc69ld2
+!i103 1
+S1
+R0
+R28
+R29
+R30
+L0 1
+R7
+31
+R31
+R32
+R33
+!i113 0
+R11
+R12
+Xheader
+R1
+!s110 1681149024
+!i10b 1
+!s100 DBR:cbn^7OX>Sj`kWKz0H0
+I=bN]<A2CefJ560SKEGnY51
+V=bN]<A2CefJ560SKEGnY51
+S1
+R0
+w1681148451
+8source/header.sv
+R27
+L0 1
+R7
+r1
+!s85 0
+31
+R24
+R25
+R26
+!i113 0
+R11
+R12
+vio_bus
+R1
+!s110 1681148916
+!i10b 1
+!s100 FAM8dRz2RYN<h`bWZ1;AX3
+I;5LfBX:^S^jK:>RifBJ7?0
+R3
+!s105 io_bus_sv_unit
+S1
+R0
+w1681148914
+8source/io_bus.sv
+Fsource/io_bus.sv
+L0 1
+R7
+r1
+!s85 0
+31
+!s108 1681148916.000000
+!s107 source/io_bus.sv|
+!s90 -sv|-work|source_work|source/io_bus.sv|
+!i113 0
+R11
+R12
+vmemory
+R1
+R2
+DXx4 work 14 memory_sv_unit 0 22 OMzg6]OafjYno5DRnI1BL0
+R3
+r1
+!s85 0
+31
+!i10b 1
+!s100 GE<:jZfcB>23gY<kSmnNS3
+IfU3Gi0PB_2=zCS2GRbL`03
+!s105 memory_sv_unit
+S1
+R0
+Z34 w1681148929
+Z35 8source/memory.sv
+Z36 Fsource/memory.sv
+L0 3
+R7
+31
+Z37 !s108 1681148930.000000
+Z38 !s107 source/memory.sv|
+Z39 !s90 -sv|-work|source_work|source/memory.sv|
+!i113 0
+R11
+R12
+Xmemory_sv_unit
+R1
+R2
+VOMzg6]OafjYno5DRnI1BL0
+r1
+!s85 0
+31
+!i10b 1
+!s100 NG9X?m_l7]NUE7;d[[mV90
+IOMzg6]OafjYno5DRnI1BL0
+!i103 1
+S1
+R0
+R34
+R35
+R36
+L0 1
+R7
+31
+R37
+R38
+R39
+!i113 0
+R11
+R12
+vprogram_counter
+R1
+R2
+DXx4 work 23 program_counter_sv_unit 0 22 OC0@2jd5QTMjNW`ba9I>Z3
+R3
+r1
+!s85 0
+31
+!i10b 1
+!s100 g2hc>NTcA`>FVCNZTgBBh2
+ILdhQ5jlPk?aSAP<2>z6e21
+!s105 program_counter_sv_unit
+S1
+R0
+Z40 w1681148946
+Z41 8source/program_counter.sv
+Z42 Fsource/program_counter.sv
+L0 3
+R7
+31
+Z43 !s108 1681148947.000000
+Z44 !s107 source/program_counter.sv|
+Z45 !s90 -sv|-work|source_work|source/program_counter.sv|
+!i113 0
+R11
+R12
+Xprogram_counter_sv_unit
+R1
+R2
+VOC0@2jd5QTMjNW`ba9I>Z3
+r1
+!s85 0
+31
+!i10b 1
+!s100 U2iOMU3[>e1I_VVzGKdh93
+IOC0@2jd5QTMjNW`ba9I>Z3
+!i103 1
+S1
+R0
+R40
+R41
+R42
+L0 1
+R7
+31
+R43
+R44
+R45
+!i113 0
+R11
+R12
+vsingle_cycle
+R1
+R2
+R19
+R3
+r1
+!s85 0
+31
+!i10b 1
+!s100 zk3B6efQXXlm7Fd1mTh[b2
+IPV@>JEKQS5PNB[JD>@::I1
+R20
+S1
+R0
+w1681148107
+R22
+R23
+L0 4
+R7
+31
+!s108 1681148454.000000
+R25
+R26
+!i113 0
+R11
+R12
+vtb_cpu
+R1
+R2
+Z46 DXx4 work 14 tb_cpu_sv_unit 0 22 a@6@aM]GIf=iV6J_`j7V>0
+R3
+r1
+!s85 0
+31
+!i10b 1
+!s100 M5838AJ4DP_g;TYSnlL;:0
+IbhzViEoh`]aj9XPCFWO]O2
+Z47 !s105 tb_cpu_sv_unit
+S1
+R0
+Z48 w1681148987
+Z49 8source/tb_cpu.sv
+Z50 Fsource/tb_cpu.sv
+L0 6
+R7
+31
+Z51 !s108 1681148991.000000
+Z52 !s107 source/header.sv|source/tb_cpu.sv|
+Z53 !s90 -sv|-work|source_work|source/tb_cpu.sv|
+!i113 0
+R11
+R12
+Xtb_cpu_sv_unit
+R1
+R2
+Va@6@aM]GIf=iV6J_`j7V>0
+r1
+!s85 0
+31
+!i10b 1
+!s100 5Q<6iZNBO`>iUGgIH;1fR3
+Ia@6@aM]GIf=iV6J_`j7V>0
+!i103 1
+S1
+R0
+R48
+R49
+R50
+R27
+L0 4
+R7
+31
+R51
+R52
+R53
+!i113 0
+R11
+R12
+vtb_top
+R1
+R2
+R46
+R3
+r1
+!s85 0
+31
+!i10b 1
+!s100 [:Ofhk1jbRS0:h>PNjg9@0
+I=ffRJzZ6ST7l[Dfz=YlJR2
+R47
+S1
+R0
+w1681148600
+R49
+R50
+L0 6
+R7
+31
+!s108 1681148601.000000
+R52
+R53
+!i113 0
+R11
+R12
+Xtop_sv_unit
+R1
+DXx4 work 6 header 0 22 Lo6T^V:b9hEn?i2Fi6F^O0
+VW8]QZRa]QKZN@hiHfD3b00
+r1
+!s85 0
+31
+!i10b 1
+!s100 Q28@GfT>W?mC@a<V;g19B3
+IW8]QZRa]QKZN@hiHfD3b00
+!i103 1
+S1
+R0
+w1681145289
+8source/top.sv
+Fsource/top.sv
+R27
+L0 2
+R7
+31
+!s108 1681145292.000000
+!s107 source/header.sv|source/top.sv|
+!s90 -sv|-work|source_work|source/top.sv|
+!i113 0
+R11
+R12

@@ -3,7 +3,7 @@ import header::*;
 module controller (
     input logic clk,
     input logic rst,
-    output logic instr_phase,
+    output logic instr_phase
 );
 
 typedef enum logic[0:7] { INSTR=8'h0, DATA=8'h1 } state;
@@ -25,7 +25,7 @@ always_comb begin
     case(s)
         INSTR: begin
             ns = DATA;
-            instr_phase = 1'b1
+            instr_phase = 1'b1;
         end
         DATA: begin
             ns = INSTR;

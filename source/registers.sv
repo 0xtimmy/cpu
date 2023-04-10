@@ -3,12 +3,12 @@ module cpu_register (
     input wire rst,
     input logic write_enable,
     input logic [0:63] write_data,
-    input logic [0:4] write_addr
+    input logic [0:4] write_addr,
     input logic [0:4] addr_a,
     input logic [0:4] addr_b,
 
     output reg [0:63] a,
-    output reg [0:63] b,
+    output reg [0:63] b
 );
 
     reg [0:32][0:63] store;

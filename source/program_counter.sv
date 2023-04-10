@@ -7,14 +7,14 @@ module program_counter (
     input logic branch,
     input logic write_data,
 
-    output logic pc,
+    output logic pc
 );
 
 reg [0:5] npc;
 
 always_ff @ (posedge clk, negedge rst) begin
     if(~rst) begin
-        pc = 6x00;
+        pc = 6'h0;
     end else begin
         pc = npc;
     end
