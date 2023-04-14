@@ -1,11 +1,9 @@
 QuestaSim vlog 10.7a Compiler 2018.03 Mar 26 2018
-Start time: 13:45:02 on Apr 10,2023
+Start time: 14:21:45 on Mar 09,2023
 vlog -sv -work source_work source/controller.sv 
--- Compiling package controller_sv_unit
--- Importing package header
 -- Compiling module controller
 
 Top level modules:
 	controller
-End time: 13:45:02 on Apr 10,2023, Elapsed time: 0:00:00
+End time: 14:21:45 on Mar 09,2023, Elapsed time: 0:00:00
 Errors: 0, Warnings: 0
