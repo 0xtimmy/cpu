@@ -1,11 +1,18 @@
 module io_bus (
     input logic clk,
     input logic rst,
-    input logic [0:8] addr,
-    input logic [0:63] write_data,
-    input logic write_enable,
 
-    output reg [0:63] read_data,
+    input logic [0:8] data_addr,
+    input logic [0:63] data_write_data,
+    input logic data_write_enable,
+    output reg [0:63] data_read_data,
+
+    input logic [0:8] instr_addr,
+    input logic [0:63] instr_write_data,
+    input logic instr_write_enable,
+    output reg [0:63] instr_read_data,
+
+    output logic modwait,
 
     input reg [0:255][0:63] ex_data
 );
