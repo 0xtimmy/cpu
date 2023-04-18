@@ -20,6 +20,9 @@ module (
     output logic mem_write_enable
 );
 
+assign mem_address = alu_result;
+assign mem_data = operand_b;
+
 assign write_data = memtoreg ? mem_read_data : alu_result;
 assign mem_write_enable = memwrite;
 

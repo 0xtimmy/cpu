@@ -1,6 +1,10 @@
+`include "header.sv"
+import header::*;
+
 module fetch_buffer(
     input logic clk,
     input logic rst,
+    input logic halt,
     
     //input stage data
     input logic [0:63] ninstruction,
@@ -10,7 +14,11 @@ module fetch_buffer(
 );
 
 always_ff @ (posedge clk) begin
-    instruction <= ninstruction;
+    if (~halt) begin 
+        instruction <= ninstruction;
+    end else begin
+        instruction <= STALL;
+    end
 end
 
 endmodule

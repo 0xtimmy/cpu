@@ -1,6 +1,7 @@
 module decode_buffer(
     input logic clk,
     input logic rst,
+    input logic halt,
 
     // input stage data
     input logic [0:63]  noperand_a,
@@ -30,16 +31,18 @@ module decode_buffer(
 );
 
 always_ff @ (posedge clk) begin
-    operand_a  <= noperand_a;
-    operand_b  <= noperand_b;
-    aluop      <= naluop;
+    if(~halt) begin
+        operand_a  <= noperand_a;
+        operand_b  <= noperand_b;
+        aluop      <= naluop;
 
-    regwrite   <= nregwrite;
-    write_addr <= nwrite_addr;
-    memwrite   <= nmemwrite;
-    memtoreg   <= nmemtoreg;
-    branch     <= nbranch;
-    setflags   <= nsetflags;
+        regwrite   <= nregwrite;
+        write_addr <= nwrite_addr;
+        memwrite   <= nmemwrite;
+        memtoreg   <= nmemtoreg;
+        branch     <= nbranch;
+        setflags   <= nsetflags;
+    end
 end
 
 endmodule

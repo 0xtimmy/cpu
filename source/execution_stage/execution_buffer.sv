@@ -1,6 +1,7 @@
 module execution_buffer(
     input logic clk,
     input logic rst,
+    input logic halt,
 
     // input stage data
     input logic [0:63]  nalu_result,
@@ -30,16 +31,18 @@ module execution_buffer(
 );
 
 always_ff @ (posedge clk) begin
-    alu_result  <= nalu_result;
-    operand_b   <= noperand_b;
+    if(~halt) begin
+        alu_result  <= nalu_result;
+        operand_b   <= noperand_b;
 
-    regwrite    <= nregwrite;
-    write_addr  <= nwrite_addr;
-    memwrite    <= nmemwrite;
-    memtoreg    <= nmemtoreg;
-    branch      <= nbranch;
-    setflags    <= nsetflags;
-    flags       <= nflags;
+        regwrite    <= nregwrite;
+        write_addr  <= nwrite_addr;
+        memwrite    <= nmemwrite;
+        memtoreg    <= nmemtoreg;
+        branch      <= nbranch;
+        setflags    <= nsetflags;
+        flags       <= nflags;
+    end
 end
 
 endmodule

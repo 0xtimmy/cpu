@@ -1,6 +1,7 @@
 module fetch_stage(
     input logic clk,
     input logic rst,
+    input logic halt,
 
     // last stage data
     input logic [0:63] write_data
@@ -21,7 +22,7 @@ reg [0:7] npc;
 reg [0:63] instruction;
 
 assign mem_address = pc;
-assign npc = pc + (branch ? write_data : 4);
+assign npc = halt ? pc : pc + (branch ? write_data : 4);
 
 always @ (posedge clk, negedge rst) begin
     if(rst) begin

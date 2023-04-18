@@ -1,6 +1,7 @@
 module writeback_buffer(
     input logic         clk,
     input logic         rst,
+    input logic         halt,
 
     // input stage data
     input [0:63]        nwrite_data,
@@ -24,12 +25,14 @@ module writeback_buffer(
 );
 
 always_ff @ (posedge clk) begin
-    write_data <= nwrite_data;
-    regwrite <= nregwrite;
-    write_addr <= nwrite_addr;
-    branch <= nbranch;
-    setflags <= nsetflags;
-    flags <= nsetflags;
+    if(~halt) begin
+        write_data <= nwrite_data;
+        regwrite <= nregwrite;
+        write_addr <= nwrite_addr;
+        branch <= nbranch;
+        setflags <= nsetflags;
+        flags <= nsetflags;
+    end
 end
 
 endmodule

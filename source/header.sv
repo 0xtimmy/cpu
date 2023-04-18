@@ -1,5 +1,6 @@
 package header;
-    typedef enum logic [0:7] {
+    typedef enum logic [0:6] {
+        STALL: 7'h7F,
         ADD: 7'h0,
         ADDI: 7'h1,
         SUB: 7'h2,
