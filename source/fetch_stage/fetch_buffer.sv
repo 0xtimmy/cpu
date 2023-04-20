@@ -17,7 +17,7 @@ always_ff @ (posedge clk) begin
     if (~halt) begin 
         instruction <= ninstruction;
     end else begin
-        instruction <= STALL;
+        instruction <= STALL_INSTRUCTION;
     end
 end
 

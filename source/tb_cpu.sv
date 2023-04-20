@@ -11,17 +11,15 @@ localparam PROGRAM_START = 8'h0;
 localparam DATA_START = 8'hff;
 
 // Performance Evaluations
-integer total_clk_cycles = 0;
+integer total_clk_cycles;
 
 // System Signals
 logic tb_clk;
 logic tb_rst;
-logic [0:7] tb_data_ptr;
-logic [0:7] tb_program_ptr;
 
 // Memory
-reg [0:255][0:63] tb_external;
-reg [0:7][0:63] tb_important_regs;
+logic [0:255][0:31] tb_program_memory; 
+logic [0:16][0:63] tb_display;
 
 always begin : CLK_GEN
     total_clk_cycles = total_clk_cycles + 1;
@@ -31,37 +29,66 @@ always begin : CLK_GEN
 	#(CLK_PERIOD / 2.0);
 end
 
-cpu p(tb_clk, tb_rst, tb_external);
+cpu p(
+    .clk(tb_clk), 
+    .rst(tb_rst), 
+    .data_address(data_address),
+    .data_write_enable(data_write_enable),
+    .data_io_wdata(data_io_wdata),
+    .data_io_rdata(data_io_rdata),
+    .instr_address(instr_address),
+    .instr_io_rdata(instr_io_rdata)
+);
+
+io_bus io_bus(
+    .address_a(data_address),
+    .write_enable_a(data_write_enable),
+    .rdata_a(data_io_rdata),
+    .wdata_a(data_io_wdata),
+    .address_b(instr_address),
+    .write_enable_b(1'b0),
+    .rdata_b(instr_io_rdata),
+
+    .display(tb_display),
+    .program_mem(tb_program_memory)
+)
 
 task load_simple_calc;
+    /** 
+     *  instruction schema = { 
+     *      [0:7]:      opcode
+     *      [8:11]:     write adress
+     *      [12:15]:    operand address a
+     *      [16:19]:    operand address b
+     *      [16:31]:    immediate
+    **/
+    tb_program_memory = '{ default: STALL_INSTRUCTION };
+    tb_program_memory[0] = { MOVI, 4'h0, 4'h0, 16'h000C }; // mov number into x0
+    tb_program_memory[1] = { MOVI, 4'h1, 4'h0, 16'h000C }; // mov number into x1
+    tb_program_memory[2] = { ADD, 4'h2, 4'h0, 4'h1, 12'h0 }; // add x2 = x1 + x0
+    tb_program_memory[3] = { STR, 4'h0, XZR, 4'h2, 12'h0 }; // str x2, [#0] 
 begin
-    // Load value a
-    tb_external[tb_program_ptr] = { LDRI, 5'h0, 21'b0, tb_data_ptr };
-    tb_program_ptr = tb_program_ptr + 1;
-    tb_external[tb_data_ptr] = 64'h0f;
-    tb_data_ptr = tb_data_ptr - 1;
-
-    // load value b
-    tb_external[tb_program_ptr] = { LDRI, 5'h1, 21'b0, tb_data_ptr };
-    tb_program_ptr = tb_program_ptr + 1;
-    tb_external[tb_data_ptr] = 64'hf0;
-    tb_data_ptr = tb_data_ptr - 1;
-
-    // sum them
-    tb_external[tb_program_ptr] = { ADD, 5'h2, 5'h0, 5'h1, 43'b0 };
-    tb_program_ptr = tb_program_ptr + 1;
-
-    // store the result
-    tb_external[tb_program_ptr] = { STRI, 5'h0, 5'h2, 16'h0, tb_data_ptr };
-    tb_program_ptr = tb_program_ptr + 1;
+    
 end
 endtask
 
 initial begin
-    tb_data_ptr = DATA_START;
-    tb_program_ptr = PROGRAM_START;
+    // Initialize Test Bench Variables
     tb_rst = 1'b1;
+    total_clk_cycles = 0;
+
+    #(2*CLK_PERIOD);
+
+    // Load Program -----------------------------------------------------------
+    tb_rst = 1'b0;
+
     load_simple_calc();
+    #(2*CLK_PERIOD);
+
+    tb_rst = 1'b1;
+    total_clk_cycles = 0;
+
+    // Program Run
     
 end
 

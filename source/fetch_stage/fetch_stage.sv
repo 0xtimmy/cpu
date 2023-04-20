@@ -1,3 +1,6 @@
+`include "header.sv"
+import header::*;
+
 module fetch_stage(
     input logic clk,
     input logic rst,
@@ -10,7 +13,7 @@ module fetch_stage(
     input logic branch,
 
     // next stage data
-    output logic [0:63] instruction;
+    output logic [0:31] instruction;
 
     // io
     input logic [0:63] mem_read_data,
@@ -19,7 +22,7 @@ module fetch_stage(
 
 reg [0:7] pc;
 reg [0:7] npc;
-reg [0:63] instruction;
+reg [0:31] instruction;
 
 assign mem_address = pc;
 assign npc = halt ? pc : pc + (branch ? write_data : 4);
@@ -27,7 +30,7 @@ assign npc = halt ? pc : pc + (branch ? write_data : 4);
 always @ (posedge clk, negedge rst) begin
     if(rst) begin
         pc <= 8'b0;
-        instruction <= 64'b0;
+        instruction <= STALL_INSTRUCTION;
     end else begin
         pc <= npc;
         instruction <= mem_read_data;

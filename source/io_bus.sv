@@ -2,36 +2,32 @@ module io_bus (
     input logic clk,
     input logic rst,
 
-    input logic [0:8] data_addr,
-    input logic [0:63] data_write_data,
-    input logic data_write_enable,
-    output reg [0:63] data_read_data,
+    input logic [0:8] address_a,
+    input logic write_enable_a,
+    input logic [0:63] wdata_a,
+    output reg [0:63] rdata_a,
 
-    input logic [0:8] instr_addr,
-    input logic [0:63] instr_write_data,
-    input logic instr_write_enable,
-    output reg [0:63] instr_read_data,
+    input logic [0:8] address_b,
+    input logic write_enable_b,
+    input logic [0:63] wdata_b,
+    output reg [0:63] rdata_b,
 
-    output logic modwait,
-
-    input reg [0:255][0:63] ex_data
+    output reg [0:15][0:63] display,
+    input reg [0:255][0:63] program_mem
 );
 
-wire [0:63] mem_result;
-wire [0:63] ex_result;
-
-assign write_mem = write_enable & addr[8];
-assign read_data = addr[8] ? mem_result : ex_result;
-
-assign ex_result = ex_data[addr[0:7]];
+always_ff @ (posedge clk, negedge rst) begin
+    rdata_b <= program_mem[address_b];
+end
 
 memory mem(
         .clk(clk),
         .rst(rst),
-        .addr(addr[0:7]),
-        .write_data(operand_b),
-        .write_enable(write_mem),
-        .read_data(mem_result)
+        .addr(address_a),
+        .write_data(wdata_a),
+        .write_enable(write_enable_a),
+        .read_data(rdata_a),
+        display(display)
     );
 
 endmodule

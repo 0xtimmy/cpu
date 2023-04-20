@@ -1,9 +1,12 @@
+`include "header.sv"
+import header::*;
+
 module decode_stage(
     input logic         clk,
     input logic         rst,
 
     // last stage inputs
-    input logic [0:63]  instruction,
+    input logic [0:31]  instruction,
 
     // writeback data
     input logic [0:4]   writeback_writeaddr,
@@ -48,6 +51,7 @@ decoder d(
     .write_addr(addr_write),
     .regwrite(regwrite),
     .use_imm(use_imm),
+    .immediate(immediate)
     .memwrite(memwrite),
     .memtoreg(memtoreg),
     .branch(branch),

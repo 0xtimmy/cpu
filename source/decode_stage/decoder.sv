@@ -1,14 +1,15 @@
+`include "header.sv"
 import header::*;
 
 module decoder (
-    input logic [0:63] instr,
+    input logic [0:31] instr,
     input logic [0:3] flags,
 
     output opcode op,
     output logic [0:4] addr_a,
     output logic [0:4] addr_b,
     output logic [0:4] write_addr,
-    output logic [0:31] immediate,
+    output logic [0:15] immediate,
     output logic regwrite,
     output logic use_imm,
     output logic memwrite,
@@ -27,6 +28,7 @@ always_comb begin
     write_addr = instr[8:11];
     addr_a = instr[12:15];
     addr_b = instr[16:19];
+    immediate = instr[16:31];
 
     regwrite = 1'b1;
     use_imm = 1'b0;
@@ -36,6 +38,12 @@ always_comb begin
     setflags = op == ADD | op == ADDI | op == SUB | op == SUBI | op == CMP | op = CMPI;
 
     case(op)
+        STALL: begin
+            regwrite = 1'b0;
+            memwrite = 1'b0;
+            memtoreg = 1'b0;
+            branch = 1'b0;
+        end
         //ADD: 
         ADDI: use_imm = 1'b1;
         //SUB:
@@ -64,11 +72,11 @@ always_comb begin
         //MOV:
         MOVI: use_imm = 1'b1;
         LDR: begin
-            memwrite = 1'b1;
+            memtoreg = 1'b1;
             regwrite = 1'b0;
         end
         STR: begin
-            memtoreg = 1'b1;
+            memwrite = 1'b1;
         end
 
         // Branches & Jumps

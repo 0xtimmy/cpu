@@ -7,10 +7,14 @@ module memory(
     input logic [0:63] write_data,
     input logic write_enable,
 
+    output logic [0:15][0:63] display,
+
     output reg [0:63] read_data
 );
 
     reg [0:255][0:63] store;
+
+    assign display = store[0:15]; 
 
     always_ff @ (posedge clk, negedge rst) begin
         if(~rst) begin

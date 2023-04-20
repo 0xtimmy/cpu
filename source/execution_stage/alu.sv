@@ -36,8 +36,9 @@ always_comb begin
 
         // Data Transfer
         MOV: y = a;
+        MOVI: y = b;
         LDR: y = a;
-        STR: y = b;
+        STR: y = a;
 
         // Branches & Jumps
         B: y = b;
